@@ -1,0 +1,13 @@
+<?php
+
+namespace {{namespace}};
+
+use {{vendor_namespace}}\Validation\Validator;
+
+class {{validator}} extends Validator
+{
+    protected $rules = [
+        /** @todo Add some rules bellow here is one example */
+        // 'email' => 'required|email|unique.users',
+    ];
+}
