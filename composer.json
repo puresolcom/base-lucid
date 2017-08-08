@@ -1,11 +1,11 @@
 {
-    "name": "anwar/awok-lucid",
-    "description": "Awok.com Lucid Base Repository",
-    "authors": [
-        {
-            "name": "Muhammad Anwar",
-            "email": "m_anwar@awok.ae"
-        }
-    ],
-    "require": {}
+  "name": "mander/awok-lucid",
+  "description": "Awok.com Lucid Base Repository",
+  "authors": [
+    {
+      "name": "Muhammad Anwar",
+      "email": "m_anwar@awok.ae"
+    }
+  ],
+  "require": {}
 }
