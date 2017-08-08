@@ -7,5 +7,10 @@
       "email": "m_anwar@awok.ae"
     }
   ],
-  "require": {}
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Awok\\": "src/"
+    }
+  }
 }
