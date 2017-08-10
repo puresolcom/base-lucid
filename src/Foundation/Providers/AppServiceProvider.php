@@ -7,6 +7,7 @@ use Awok\Console\Commands\CrudMakeCommand;
 use Awok\Console\Commands\FeatureMakeCommand;
 use Awok\Console\Commands\JobMakeCommand;
 use Awok\Console\Commands\ModelMakeCommand;
+use Awok\Console\Commands\OperationMakeCommand;
 use Awok\Console\Commands\ValidatorMakeCommand;
 use Awok\Foundation\Exceptions\Handler\JsonExceptionsHandler;
 use Illuminate\Contracts\Debug\ExceptionHandler;
@@ -26,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
                 ControllerMakeCommand::class,
                 ModelMakeCommand::class,
                 FeatureMakeCommand::class,
+                OperationMakeCommand::class,
                 JobMakeCommand::class,
                 ValidatorMakeCommand::class,
                 CrudMakeCommand::class,
