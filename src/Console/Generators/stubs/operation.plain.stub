@@ -1,0 +1,13 @@
+<?php
+
+namespace {{namespace}};
+
+use {{vendor_namespace}}\Foundation\Operation;
+
+class {{operation}} extends Operation
+{
+    public function handle()
+    {
+
+    }
+}

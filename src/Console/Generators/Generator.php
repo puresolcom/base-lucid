@@ -58,6 +58,11 @@ class Generator
         return base_path('app').'/Domains/'.$domain.'/Validators/'.$validator.'.php';
     }
 
+    public function findOperationPath($operation)
+    {
+        return base_path('app').'/Operations/'.$operation.'.php';
+    }
+
     public function findVendorRootNameSpace()
     {
         return 'Awok';
@@ -108,6 +113,11 @@ class Generator
     public function findValidatorNamespace($domain)
     {
         return $this->findRootNamespace().'\\Domains\\'.$domain.'\\Validators';
+    }
+
+    public function findOperationNamespace()
+    {
+        return $this->findRootNamespace().'\\Operations';
     }
 
     public function exists($path)
