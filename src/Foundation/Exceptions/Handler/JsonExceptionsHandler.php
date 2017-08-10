@@ -23,7 +23,7 @@ class JsonExceptionsHandler extends Handler
         return $this->run(JsonErrorResponseJob::class, [
             'message' => $e->getMessage(),
             'code'    => get_class($e),
-            'status'  => ($e->getCode() > 0) ? $e->getCode() : 400,
+            'status'  => ($e->getCode() < 100 || $e->getCode() >= 600) ? 400 : $e->getCode(),
         ]);
     }
 }
