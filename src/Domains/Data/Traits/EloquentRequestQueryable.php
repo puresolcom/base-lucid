@@ -253,7 +253,8 @@ trait EloquentRequestQueryable
         /** @var RequestRelationField $relation */
         foreach ($this->getRelations() as $relation) {
             if ($relation->isRelational()) {
-                $relationName = $relation->getRelationName().'.'.$relation->getName();
+                $relationName = $relation->getRelationName()/*.'.'.$relation->getName()*/
+                ;
             } else {
                 $relationName = $relation->getName();
             }
