@@ -110,8 +110,8 @@ trait EloquentRequestQueryable
         if ($this->getModel() instanceof Model) {
             $queryBuilder = $this->getModel()->newQuery();
         } elseif ($this->getModel() instanceof Relation) {
+            $this->relationName     = $this->getModel()->getRelated()->getTable();
             $this->relationInstance = true;
-            $this->relationName     = $this->getModel()->getRelationName();
             $queryBuilder           = $this->getModel()->getQuery();
         } elseif ($this->getModel() instanceof \Awok\Foundation\Eloquent\Builder) {
             $queryBuilder = $this->getModel();
