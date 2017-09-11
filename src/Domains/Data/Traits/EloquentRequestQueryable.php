@@ -13,7 +13,6 @@ use Awok\Foundation\Http\RequestSort;
 use Awok\Foundation\Http\RequestSortCollection;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Illuminate\Support\Arr;
 
 trait EloquentRequestQueryable
 {
@@ -199,7 +198,8 @@ trait EloquentRequestQueryable
     {
         $filterField = $filter->getField();
         if ($filterField->isRelational()) {
-            $fieldNamePrefix = Arr::last($filterField->getRelationFragments()).'.';
+            //$fieldNamePrefix = Arr::last($filterField->getRelationFragments()).'.';
+            $fieldNamePrefix = $builder->getModel()->getTable().'.';
         } else {
             $fieldNamePrefix = $this->isRelationInstance() ? $this->getRelationName().'.' : '';
         }
