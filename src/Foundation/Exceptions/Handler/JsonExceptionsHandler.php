@@ -20,6 +20,10 @@ class JsonExceptionsHandler extends Handler
 
     public function render($request, Exception $e)
     {
+        if (env('APP_DEBUG') == true && $request->has('debug')) {
+            return parent::render($request, $e);
+        }
+
         return $this->run(JsonErrorResponseJob::class, [
             'message' => $e->getMessage(),
             'code'    => get_class($e),
