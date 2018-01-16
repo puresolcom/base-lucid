@@ -1,4 +1,5 @@
 <?php
+
 namespace Awok\Validation;
 
 use Awok\Foundation\Exceptions\InvalidInputException;
@@ -23,16 +24,17 @@ class Validator
     /**
      * Validate the given input.
      *
-     * @param array $input The input to validate
-     * @param array $rules Specify custom rules (will override class rules)
+     * @param array $input    The input to validate
+     * @param array $rules    Specify custom rules (will override class rules)
+     * @param array $messages Specify custom messages
      *
      * @return bool
      *
      * @throws InvalidInputException
      */
-    public function validate($input, array $rules = [])
+    public function validate($input, array $rules = [], $messages = [])
     {
-        $validation = $this->validation($input, $rules);
+        $validation = $this->validation($input, $rules, $messages);
         if ($validation->fails()) {
             throw new InvalidInputException($validation);
         }
@@ -46,15 +48,16 @@ class Validator
      *
      * @param array $input
      * @param array $rules
+     * @param array $messages
      *
      * @return \Illuminate\Validation\Validator
      */
-    public function validation($input, array $rules = [])
+    public function validation($input, array $rules = [], $messages = [])
     {
         if (empty($rules)) {
             $rules = $this->rules;
         }
 
-        return $this->validation->make($input, $rules);
+        return $this->validation->make($input, $rules, $messages);
     }
 }
