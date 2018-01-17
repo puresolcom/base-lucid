@@ -10,7 +10,7 @@ class RoleMiddleware
     {
         $roles = explode('|', $role);
         if (! app('authorization')->hasRole($roles, $requireAll)) {
-            throw new UnauthorizedAccess();
+            throw new UnauthorizedAccess('Permission Denied', 403);
         }
 
         return $next($request);
