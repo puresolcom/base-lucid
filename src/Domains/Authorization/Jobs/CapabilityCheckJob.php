@@ -23,6 +23,6 @@ class CapabilityCheckJob extends Job
             return true;
         }
 
-        throw new UnauthorizedAccess('You do not have enough permission to access this resource');
+        throw new UnauthorizedAccess('Access Forbidden', 403);
     }
 }
