@@ -5,7 +5,7 @@ namespace Awok\Foundation\Exceptions\Handler;
 use Awok\Domains\Http\Jobs\JsonErrorResponseJob;
 use Awok\Foundation\Traits\JobDispatcherTrait;
 use Awok\Foundation\Traits\MarshalTrait;
-use Exception;
+use Throwable;
 use Laravel\Lumen\Exceptions\Handler;
 
 class JsonExceptionsHandler extends Handler
@@ -13,12 +13,12 @@ class JsonExceptionsHandler extends Handler
     use MarshalTrait;
     use JobDispatcherTrait;
 
-    public function report(Exception $e)
+    public function report(Throwable $e)
     {
         parent::report($e);
     }
 
-    public function render($request, Exception $e)
+    public function render($request, Throwable $e)
     {
         if (env('APP_DEBUG') == true && $request->has('debug')) {
             return parent::render($request, $e);
