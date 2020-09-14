@@ -2,11 +2,12 @@
 
 namespace Awok\Foundation\Exceptions\Handler;
 
-use Awok\Domains\Http\Jobs\JsonErrorResponseJob;
-use Awok\Foundation\Traits\JobDispatcherTrait;
-use Awok\Foundation\Traits\MarshalTrait;
+use Exception;
 use Throwable;
 use Laravel\Lumen\Exceptions\Handler;
+use Awok\Foundation\Traits\MarshalTrait;
+use Awok\Foundation\Traits\JobDispatcherTrait;
+use Awok\Domains\Http\Jobs\JsonErrorResponseJob;
 
 class JsonExceptionsHandler extends Handler
 {

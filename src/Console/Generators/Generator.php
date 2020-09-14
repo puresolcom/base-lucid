@@ -3,6 +3,7 @@
 namespace Awok\Console\Generators;
 
 use Exception;
+use Illuminate\Support\Str;
 use Illuminate\Filesystem\Filesystem;
 
 class Generator
@@ -150,7 +151,7 @@ class Generator
 
     public function controllerName($name)
     {
-        return studly_case(preg_replace('/Controller(\.php)?$/', '', $name).'Controller');
+        return Str::studly(preg_replace('/Controller(\.php)?$/', '', $name).'Controller');
     }
 
     public function getStubName()

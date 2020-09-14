@@ -2,6 +2,8 @@
 
 namespace Awok\Foundation\Http;
 
+use Illuminate\Support\Str;
+
 /**
  * Class RequestFilter
  *
@@ -79,7 +81,7 @@ class RequestFilter
      */
     protected function isValidFilter($filter)
     {
-        if (! str_contains($filter, $this->getComparisonSymbols())) {
+        if (! Str::contains($filter, $this->getComparisonSymbols())) {
             return false;
         }
 
