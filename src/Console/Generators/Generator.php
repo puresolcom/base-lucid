@@ -34,6 +34,7 @@ class Generator
         $this->generatedClassName = $generatedClassName;
     }
 
+    
     public function findControllerPath($controller)
     {
         return base_path('app').'/Http/Controllers/'.$controller.'.php';
